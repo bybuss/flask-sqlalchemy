@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Добавить запись</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
 </head>
 <body>
-    <h1>Добавить запись</h1>
-    <form action="/add" method="post">
-        <input type="text" name="title" placeholder="Введите название новости">
-        <input type="text" name="content" placeholder="Введите текст новости">
-        <input type="submit" value="Добавить!">
-    </form>
+    <div class="container">
+        <h1>Добавить запись</h1>
+        <form action="/add" method="post" class="form-style">
+            <div class="form-group">
+                <input type="text" name="title" class="form-control" placeholder="Введите название новости">
+            </div>
+            <div class="form-group">
+                <textarea name="content" class="form-control" placeholder="Введите текст новости"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить!" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
 </body>
 </html>

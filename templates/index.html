@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Блог</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
 </head>
 <body>
-    <h1>Блог</h1>
-    {% for i in posts %}
-        <h2>{{ i.title }}</h2>
-        <p>{{ i.content }}</p>
-        <a href="/delete/{{ i.id }}">Удалить</a>
-    {% endfor %}
-    <br>
-    <a href="/add">Добавить запись</a>
+    <div class="container">
+        <h1>Блог</h1>
+        <div class="posts">
+            {% for i in posts %}
+                <div class="post">
+                    <h2>{{ i.title }}</h2>
+                    <p>{{ i.content }}</p>
+                    <a href="/delete/{{ i.id }}" class="btn btn-danger">Удалить</a>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="/add" class="btn btn-primary">Добавить запись</a>
+    </div>
 </body>
 </html>
